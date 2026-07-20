@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tongits Counter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Options Bar -->
+        <header class="top-bar">
+            <div class="logo">Tongits Counter</div>
+            <div class="global-controls">
+                <button id="btn-undo" class="btn btn-secondary">↺ Undo</button>
+                <button id="btn-history" class="btn btn-secondary">History</button>
+                <button id="btn-next-round" class="btn btn-primary">Next Round</button>
+                <button id="btn-menu" class="btn btn-icon">⚙️</button>
+            </div>
+        </header>
+
+        <!-- Player Grid Area -->
+        <main id="player-grid" class="player-grid players-3">
+            <!-- Player Cards injected dynamically by app.js -->
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="modal-settings" class="modal hidden">
+        <div class="modal-content poker-modal">
+            <h2>Game Settings</h2>
+            
+            <div class="settings-grid">
+                <div class="settings-section">
+                    <h3>Game Sessions</h3>
+                    <div class="input-group">
+                        <label>Select Game</label>
+                        <select id="select-game-session">
+                            <!-- Options injected via JS -->
+                        </select>
+                    </div>
+                    <div class="input-group" style="margin-top: 5px;">
+                        <input type="text" id="input-new-game-name" placeholder="New game name..." style="width: 100%;">
+                        <button id="btn-create-game" class="btn btn-primary" style="margin-left: 5px;">Create</button>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Event Values</h3>
+                    <div class="input-group">
+                        <label>Tongits</label>
+                        <input type="number" id="val-tongits" value="150">
+                    </div>
+                    <div class="input-group">
+                        <label>Sunog</label>
+                        <input type="number" id="val-sunog" value="100">
+                    </div>
+                    <div class="input-group">
+                        <label>4 of a Kind</label>
+                        <input type="number" id="val-4kind" value="50">
+                    </div>
+                    <div class="input-group">
+                        <label>Draw/Challenge</label>
+                        <input type="number" id="val-draw" value="20">
+                    </div>
+                    <div class="input-group">
+                        <label>First 3</label>
+                        <input type="number" id="val-first3" value="10">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Player Setup</h3>
+                    <div class="input-group">
+                        <label>Number of Players</label>
+                        <select id="select-player-count">
+                            <option value="2">2 Players</option>
+                            <option value="3" selected>3 Players</option>
+                            <option value="4">4 Players</option>
+                        </select>
+                    </div>
+                    <div id="player-names-inputs">
+                        <!-- Name inputs injected here -->
+                    </div>
+                    <button id="btn-apply-players" class="btn btn-warning full-width" style="margin-top: 10px;">Apply & Reset Game</button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Data Management</h3>
+                    <div class="data-buttons">
+                        <button id="btn-export" class="btn btn-secondary">Export to TXT</button>
+                        <button id="btn-import" class="btn btn-secondary">Import from TXT</button>
+                    </div>
+                    <input type="file" id="file-import" accept=".txt" style="display: none;">
+                </div>
+            </div>
+
+            <button id="btn-close-settings" class="btn btn-primary full-width">Close</button>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="modal-history" class="modal hidden">
+        <div class="modal-content poker-modal">
+            <h2>Game History</h2>
+            <div id="history-container" class="history-content">
+                <!-- History logs injected here -->
+            </div>
+            <button id="btn-close-history" class="btn btn-primary full-width">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

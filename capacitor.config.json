@@ -1,0 +1,6 @@
+{
+  "appId": "com.tongitscounter.app",
+  "appName": "Tongits Counter",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

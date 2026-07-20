@@ -1,0 +1,21 @@
+{
+  "name": "tongits-counter",
+  "version": "1.0.0",
+  "description": "A Tongits scoring counter application",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo \"Nothing to build for vanilla JS\"",
+    "android": "cap add android && cap sync android && cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/core": "^6.2.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

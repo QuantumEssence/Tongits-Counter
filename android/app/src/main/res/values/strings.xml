@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tongits Counter</string>
+    <string name="title_activity_main">Tongits Counter</string>
+    <string name="package_name">com.tongitscounter.app</string>
+    <string name="custom_url_scheme">com.tongitscounter.app</string>
+</resources>
