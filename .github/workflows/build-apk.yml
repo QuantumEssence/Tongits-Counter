@@ -28,13 +28,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Copy Web Assets to Android
-        run: |
-          mkdir -p android/app/src/main/assets/public
-          cp www/index.html android/app/src/main/assets/public/
-          cp www/styles.css android/app/src/main/assets/public/
-          cp www/app.js android/app/src/main/assets/public/
-          cp capacitor.config.json android/app/src/main/assets/
+      - name: Sync Capacitor
+        run: npx cap sync android
 
       - name: Make Gradle Wrapper Executable
         run: chmod +x android/gradlew
