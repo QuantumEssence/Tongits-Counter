@@ -86,8 +86,8 @@ function renderGrid() {
         const card = document.createElement('div');
         card.className = 'player-card';
         
-        // Helper to check disabled state
-        const isDis = (val) => val === 0 ? 'disabled' : '';
+        // Helper to check disabled state (hide if 0)
+        const btnStyle = (val) => val === 0 ? 'display: none;' : '';
 
         card.innerHTML = `
             <div class="player-header">
@@ -99,19 +99,19 @@ function renderGrid() {
                 <div class="round-score">${player.roundScore}</div>
             </div>
             <div class="event-buttons">
-                <button class="event-btn tongits" data-player="${index}" data-event="tongits" ${isDis(state.settings.events.tongits)}>
+                <button class="event-btn tongits" data-player="${index}" data-event="tongits" style="${btnStyle(state.settings.events.tongits)}">
                     Tongits <span class="event-val">+${state.settings.events.tongits}</span>
                 </button>
-                <button class="event-btn sunog" data-player="${index}" data-event="sunog" ${isDis(state.settings.events.sunog)}>
+                <button class="event-btn sunog" data-player="${index}" data-event="sunog" style="${btnStyle(state.settings.events.sunog)}">
                     Sunog <span class="event-val">+${state.settings.events.sunog}</span>
                 </button>
-                <button class="event-btn kind4" data-player="${index}" data-event="kind4" ${isDis(state.settings.events.kind4)}>
+                <button class="event-btn kind4" data-player="${index}" data-event="kind4" style="${btnStyle(state.settings.events.kind4)}">
                     4 of a Kind <span class="event-val">+${state.settings.events.kind4}</span>
                 </button>
-                <button class="event-btn draw" data-player="${index}" data-event="draw" ${isDis(state.settings.events.draw)}>
+                <button class="event-btn draw" data-player="${index}" data-event="draw" style="${btnStyle(state.settings.events.draw)}">
                     Draw/Chlg <span class="event-val">+${state.settings.events.draw}</span>
                 </button>
-                <button class="event-btn first3" data-player="${index}" data-event="first3" ${isDis(state.settings.events.first3)}>
+                <button class="event-btn first3" data-player="${index}" data-event="first3" style="${btnStyle(state.settings.events.first3)}">
                     First 3 <span class="event-val">+${state.settings.events.first3}</span>
                 </button>
             </div>
